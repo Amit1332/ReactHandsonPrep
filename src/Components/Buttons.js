@@ -58,14 +58,22 @@ export const Buttons = () => {
 }
 
 
-class ClassBasedComp extends Component {
+export class ClassBasedComp extends Component {
+    constructor (){
+        super()
+        this.state = {
+            first:"This is created using Class Component",
+            second:"This is done using external css",
+            third:"This is done using internal css",
+        }
+    }
     render(){
         return (
             <>
             <div className="card">
-                <h2>This is created using Class Component</h2>
-                <h6>This is done using external css</h6>
-                <h6 style={{color:"red"}}>This is done using internal css</h6>
+                <h2>{this.state.first}</h2>
+                <h6>{this.state.second}</h6>
+                <h6 style={{color:"red"}}>{this.state.third}</h6>
 
             </div>
 
